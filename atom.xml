@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rareliao.github.io</id>
     <title>了了的呓语</title>
-    <updated>2021-09-03T14:24:04.255Z</updated>
+    <updated>2021-09-03T14:31:51.679Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rareliao.github.io"/>
     <link rel="self" href="https://rareliao.github.io/atom.xml"/>
@@ -10,6 +10,87 @@
     <logo>https://rareliao.github.io/images/avatar.png</logo>
     <icon>https://rareliao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 了了的呓语</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux常用发行版下载导航 一]]></title>
+        <id>https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/</id>
+        <link href="https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/">
+        </link>
+        <updated>2021-09-03T12:57:25.000Z</updated>
+        <content type="html"><![CDATA[<p>👻👻👻👻## ☀️ubuntu及衍生<br>
+-----------最富盛名的Linux发行版之一，兼容好------------</p>
+<h3 id="1ununtu">1.ununtu</h3>
+<ul>
+<li>桌面环境Gone(16.10以后)/Unity(16.04以前)</li>
+</ul>
+<h3 id="2xubuntu">2.xubuntu</h3>
+<ul>
+<li>桌面环境xfce</li>
+</ul>
+<h3 id="3kubuntu">3.kubuntu</h3>
+<ul>
+<li>桌面环境KDE</li>
+</ul>
+<h3 id="4lubuntu">4.lubuntu</h3>
+<ul>
+<li>桌面环境LXQT(18.10以后)/LXDE(18.10)</li>
+</ul>
+<h3 id="5-ubuntu-studio">5. ubuntu  studio</h3>
+<ul>
+<li>适合音乐/广播创作者</li>
+</ul>
+<h3 id="6ubuntu-budgie">6.ubuntu budgie</h3>
+<ul>
+<li>桌面环境Budgie DE</li>
+</ul>
+<h3 id="7ubuntu-kylin">7.ubuntu kylin</h3>
+<ul>
+<li>桌面环境UKUI</li>
+</ul>
+<h3 id="8ubuntu-mate">8.ubuntu mate</h3>
+<ul>
+<li>桌面环境MATE</li>
+</ul>
+<h3 id="9mythbuntu">9.mythbuntu</h3>
+<ul>
+<li>桌面环境xfce myTV版buntu(终止于16.04)</li>
+</ul>
+<h3 id="10ubuntu-gnome">10.ubuntu gnome</h3>
+<ul>
+<li>桌面环境gnome,在Ubuntu采用unity时作为衍生版(终止于16.04)</li>
+</ul>
+<h3 id="11ubuntu-server">11.ubuntu server</h3>
+<ul>
+<li>适用于做服务器系统的版本<br>
+💫<a href="http://www.cdimage.ubuntu.com/">ubuntu及衍生版历史版本下载</a><br>
+💫<a href="https://ubuntu.com/download/desktop/">ubuntu官版官方下载</a><br>
+💫<a href="https://xubuntu.org/download/">xubuntu官方下载</a><br>
+💫<a href="https://kubuntu.org/getkubuntu/">kubuntu官方下载</a><br>
+💫<a href="https://lubuntu.me/downloads/">lubuntu官方下载</a><br>
+💫<a href="https://ubuntustudio.org/download/">unbuntu studio官方下载</a><br>
+💫<a href="https://ubuntubudgie.org/downloads/">ubuntu budgie官方下载</a><br>
+💫<a href="https://www.ubuntukylin.com/downloads/show.php?id=451&amp;lang=en">ubuntu kylin官方下载</a><br>
+💫<a href="https://ubuntu-mate.org/download/">ubuntu mate官方下载</a><br>
+💫<a href="http://www.cdimage.ubuntu.com/mythbuntu/">mythbuntu历史版本下载</a><br>
+💫<a href="http://www.cdimage.ubuntu.com/ubuntu-gnome/">unbuntu gonme历史版本下载</a><br>
+💫<a href="https://ubuntu.com/download/server">ubuntu server官方下载</a>
+<h2 id="️jing-os">☀️jing OS</h2>
+-----------为非iPad的平板设备开发的触摸型操纵系统-----------<br>
+💫<a href="https://cn.jingos.com/">jing OS官方下载</a>
+<h2 id="️deepin">☀️deepin</h2>
+-----------本土化做的最好的Linux发行版 -----------
+<ul>
+<li>桌面环境DDE<br>
+💫<a href="https://www.deepin.org/zh/download/">deepin官方下载</a><br>
+💫<a href="http://cdimage.deepin.com/releases/">deepin官方镜像仓库</a><br>
+💫<a href="http://cdimage.deepin.com/releases-archive/">deepin旧版本仓库</a></li>
+</ul>
+<h2 id="️kail">☀️kail</h2>
+-----------安全测试专用 -----------<br>
+💫 <a href="https://www.kali.org/get-kali/">kail官方下载</a><br>
+💫 <a href="http://cdimage.kali.org/">kail官方镜像仓库</a></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://rareliao.github.io/post/hello-gridea/</id>
