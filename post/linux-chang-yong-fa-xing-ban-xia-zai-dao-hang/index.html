@@ -8,8 +8,8 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="理想主义青年永远不会被现实招安">
 <meta name="theme-color" content="#000">
-<title>Linux常用发行版下载导航 一 | 了了的呓语</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1630679507738">
+<title>Linux常用发行版下载导航  | 了了的呓语</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1630749899389">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -41,8 +41,8 @@
 
 
 
-  <meta name="description" content="Linux常用发行版下载导航 一" />
-  <meta name="keywords" content="Linux" />
+  <meta name="description" content="Linux常用发行版下载导航 " />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -172,8 +172,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -190,19 +189,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">1</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">0</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">0</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -235,212 +234,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1ununtu">1.ununtu</a></li>
-<li><a href="#2xubuntu">2.xubuntu</a></li>
-<li><a href="#3kubuntu">3.kubuntu</a></li>
-<li><a href="#4lubuntu">4.lubuntu</a></li>
-<li><a href="#5-ubuntu-studio">5. ubuntu  studio</a></li>
-<li><a href="#6ubuntu-budgie">6.ubuntu budgie</a></li>
-<li><a href="#7ubuntu-kylin">7.ubuntu kylin</a></li>
-<li><a href="#8ubuntu-mate">8.ubuntu mate</a></li>
-<li><a href="#9mythbuntu">9.mythbuntu</a></li>
-<li><a href="#10ubuntu-gnome">10.ubuntu gnome</a></li>
-<li><a href="#11ubuntu-server">11.ubuntu server</a></li>
-</ul>
-</li>
-<li><a href="#%EF%B8%8Fjing-os">☀️jing OS</a></li>
-<li><a href="#%EF%B8%8Fdeepin">☀️deepin</a></li>
-<li><a href="#%EF%B8%8Fkail">☀️kail</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -529,7 +322,7 @@
             <section class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/">
-      Linux常用发行版下载导航 一
+      Linux常用发行版下载导航 
     </a>
   </h1>
   <div class="post-meta">
@@ -537,36 +330,23 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-09-03 20:57:25">2021-09-03</span>
+      <span class="publish-time" data-t="2021-09-04 13:12:34">2021-09-04</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://rareliao.github.io/tag/DChCre0F7/">
-        <span>Linux</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>310<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1012<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/" data-flag-title="Linux常用发行版下载导航 一" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/" data-flag-title="Linux常用发行版下载导航 " class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -575,79 +355,269 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>👻👻👻👻## ☀️ubuntu及衍生<br>
------------最富盛名的Linux发行版之一，兼容好------------</p>
-<h3 id="1ununtu">1.ununtu</h3>
+              <p>👻👻👻👻👻</p>
+<!-- more -->
+<p>☀️ ubuntu及衍生<br>
+✨ 最富盛名的Linux发行版之一，兼容性好</p>
+<ol>
+<li>ubuntu</li>
+</ol>
 <ul>
-<li>桌面环境Gone(16.10以后)/Unity(16.04以前)</li>
+<li>桌面环境 Gone(16.10以后)/Unity(16.04以前)<br>
+<a href="https://ubuntu.com/download/desktop/">ubuntu官方下载</a><br>
+<a href="http://www.cdimage.ubuntu.com/">ubuntu及衍生历史版本下载</a></li>
 </ul>
-<h3 id="2xubuntu">2.xubuntu</h3>
+<ol start="2">
+<li>xubuntu</li>
+</ol>
+<ul>
+<li>桌面环境 xfce<br>
+<a href="https://xubuntu.org/download/">xubuntu官方下载</a></li>
+</ul>
+<ol start="3">
+<li>kubuntu</li>
+</ol>
+<ul>
+<li>桌面环境 KDE<br>
+<a href="https://kubuntu.org/getkubuntu/">kubuntu官方下载</a></li>
+</ul>
+<ol start="4">
+<li>lubuntu</li>
+</ol>
+<ul>
+<li>桌面环境 LXQT(18.10以后)/LXDE(18.10)<br>
+<a href="https://lubuntu.me/downloads/">lubuntu官方下载</a></li>
+</ul>
+<ol start="5">
+<li>ubuntu studio</li>
+</ol>
+<ul>
+<li>适合音乐/广播创作者<br>
+<a href="https://ubuntustudio.org/download/">ubuntu studio官方下载</a></li>
+</ul>
+<ol start="6">
+<li>ubuntu budgie</li>
+</ol>
+<ul>
+<li>桌面环境 Budgie DE<br>
+<a href="https://ubuntubudgie.org/downloads/">ubuntu budgie官方下载</a></li>
+</ul>
+<ol start="7">
+<li>ubuntu kylin</li>
+</ol>
+<ul>
+<li>桌面环境 UKUI<br>
+<a href="https://www.ubuntukylin.com/downloads/show.php?id=451&amp;lang=en">ubuntu kylin官方下载</a></li>
+</ul>
+<ol start="8">
+<li>ubuntu mate</li>
+</ol>
+<ul>
+<li>桌面环境MATE<br>
+<a href="https://ubuntu-mate.org/download/">ubuntu mate官方下载</a></li>
+</ul>
+<ol start="9">
+<li>mythbuntu</li>
+</ol>
+<ul>
+<li>桌面环境 xfce myTV版buntu(终止于16.04)<br>
+<a href="http://www.cdimage.ubuntu.com/mythbuntu/">mythbuntu历史版本下载</a></li>
+</ul>
+<ol start="10">
+<li>ubuntu gnome</li>
+</ol>
+<ul>
+<li>桌面环境 gnome,在Ubuntu采用unity时作为衍生版(终止于16.04)<br>
+<a href="http://www.cdimage.ubuntu.com/ubuntu-gnome/">ubuntu gnome历史版本下载</a></li>
+</ul>
+<ol start="11">
+<li>ubuntu server</li>
+</ol>
+<ul>
+<li>适用于做服务器系统的版本<br>
+<a href="https://ubuntu.com/download/server">ubuntu server官方下载</a></li>
+</ul>
+<p>☀️ jing OS<br>
+✨ 为非ipad的平板设备开发的触控型操作系统<br>
+<a href="https://cn.jingos.com/">jing OS官方下载</a></p>
+<p>☀️ deepin<br>
+✨ 本土化做的最好的Linux发行版</p>
+<ul>
+<li>桌面环境DDE<br>
+<a href="https://www.deepin.org/zh/download/">deepin官方下载</a><br>
+<a href="http://cdimage.deepin.com/releases/">镜像仓库</a><br>
+<a href="http://cdimage.deepin.com/releases-archive/">旧版本仓库</a></li>
+</ul>
+<p>☀️ kali<br>
+✨ 安全测试专用<br>
+<a href="https://www.kali.org/get-kali/">kali官方下载</a><br>
+<a href="http://cdimage.kali.org/">镜像仓库</a></p>
+<p>☀️ fedora<br>
+✨ Red Hat社区版，各种版本很全</p>
+<ol>
+<li>fedora workstation</li>
+</ol>
+<ul>
+<li>桌面环境 gnome</li>
+</ul>
+<ol start="2">
+<li>fedora spins</li>
+</ol>
+<ul>
+<li>桌面环境 KDE/xfce/MATE/LXDE/LXQT/cinnamon</li>
+</ul>
+<ol start="3">
+<li>fedora comp neuro</li>
+</ol>
+<ul>
+<li>桌面环境 gnome</li>
+</ul>
+<ol start="4">
+<li>fedora astronomy</li>
+</ol>
+<ul>
+<li>桌面环境 KDE</li>
+</ul>
+<ol start="5">
+<li>fedora design suite</li>
+</ol>
+<ul>
+<li>桌面环境 xfce</li>
+</ul>
+<ol start="6">
+<li>fedora games</li>
+</ol>
 <ul>
 <li>桌面环境xfce</li>
 </ul>
-<h3 id="3kubuntu">3.kubuntu</h3>
+<ol start="7">
+<li>fedora python classroom</li>
+</ol>
 <ul>
-<li>桌面环境KDE</li>
+<li>桌面环境 gnome</li>
 </ul>
-<h3 id="4lubuntu">4.lubuntu</h3>
+<ol start="8">
+<li>fedora security</li>
+</ol>
 <ul>
-<li>桌面环境LXQT(18.10以后)/LXDE(18.10)</li>
+<li>桌面环境 xfce</li>
 </ul>
-<h3 id="5-ubuntu-studio">5. ubuntu  studio</h3>
+<ol start="9">
+<li>fedora scientific</li>
+</ol>
 <ul>
-<li>适合音乐/广播创作者</li>
+<li>桌面环境 KDE<br>
+<a href="https://getfedora.org/en/workstation/download/">fedora workstation官方下载</a><br>
+<a href="https://getfedora.org/en/server/download/">fedora server官方下载</a><br>
+<a href="https://spins.fedoraproject.org/kde/download/index.html">fedora KDE官方下载</a><br>
+<a href="https://spins.fedoraproject.org/xfce/download/index.html">fedora xfce官方下载</a><br>
+<a href="https://spins.fedoraproject.org/lxqt/downloadindex.html">fedora LXQT官方下载</a> <a href="https://spins.fedoraproject.org/mate-compizdownload/index.html">fedora mate compiz官方下载</a><br>
+<a href="https://spins.fedoraproject.org/cinnamon/download/index.html">fedora cinnamon官方下载</a><br>
+<a href="https://spins.fedoraproject.org/lxde/download/index.html">fedora lxde官方下载</a><br>
+<a href="https://labs.fedoraproject.org/astronomy/download/index.html">fedora实验室·astronomy版本</a><br>
+<a href="https://labs.fedoraproject.org/comp-neuro/download/index.html">fedora实验室 comp neuro版本</a><br>
+<a href="https://labs.fedoraproject.org/design-suitedownload/index.html">fedora实验室 design suite版本</a><br>
+<a href="https://labs.fedoraproject.org/games/download/index.html">fedora 实验室 games版本</a><br>
+<a href="https://labs.fedoraproject.org/jam/download/index.html">fedora 实验室 JAM 版本</a><br>
+<a href="https://labs.fedoraproject.org/python-classroom/download/index.html">fedora实验室 python classroom版本</a><br>
+<a href="https://labs.fedoraproject.org/security/download/index.html">fedora 实验室 security 版本</a><br>
+<a href="https://labs.fedoraproject.org/robotics/download/index.html">fedora 实验室 robotics suite版本</a><br>
+<a href="https://labs.fedoraproject.org/scientific/download/index.html">fedora 实验室 scientific版本</a><br>
+<a href="http://archive.fedoraproject.org/pub/fedora/linux/releases/">fedora旧版本仓库</a></li>
 </ul>
-<h3 id="6ubuntu-budgie">6.ubuntu budgie</h3>
+<p>☀️ linux mint<br>
+✨ 比ubuntu用户体验做的细致，值得体验<br>
+<a href="https://www.linuxmint.com/download.php">linux mint官方下载</a><br>
+<a href="https://www.linuxmint.com/download_all.php">Linux mint旧版本</a></p>
+<p>☀️ LMDE （ Linux mint Debian Edition）<br>
+✨ Linux mint基于Debian的版本<br>
+<a href="https://www.linuxmint.com/download_lmde.php">LMDE官方下载</a></p>
+<p>☀️ arch linux<br>
+✨ 安装富有挑战性<br>
+<a href="https://archlinux.org/download/">arch linux 官方下载</a><br>
+<a href="https://archive.archlinux.org/iso/">arch linux 历史版本</a></p>
+<p>☀️ elementary OS<br>
+✨ 拟物化风格</p>
 <ul>
-<li>桌面环境Budgie DE</li>
+<li>桌面环境pantheon<br>
+<a href="https://elementary.io/">elementary OS 官方下载</a>(输入金额0即可下载)</li>
 </ul>
-<h3 id="7ubuntu-kylin">7.ubuntu kylin</h3>
+<p>☀️ zorin OS<br>
+✨易用，轻量，简约<br>
+<a href="https://zorinos.com/download/">zorin OS 官方下载</a></p>
+<p>☀️ cent OS<br>
+✨服务器专属，老牌Linux发行版<br>
+<a href="https://www.centos.org/download/">cent OS 官方下载</a><br>
+<a href="https://wiki.centos.org/Download">cent OS 旧版本下载</a></p>
+<p>☀️ gentoo Linux<br>
+<a href="https://www.gentoo.org/downloads/">gentoo linux官方下载</a></p>
+<p>☀️ openSUSE<br>
+✨ SUSE enterprise Linux公开版<br>
+<a href="https://software.opensuse.org/distributions/leap">openSUSE Leap 官方下载</a><br>
+<a href="https://software.opensuse.org/distributionstumbleweed">openSUSE tumbleweed 官方下载</a><br>
+<a href="http://ftp5.gwdg.de/pub/opensuse/discontinued/distribution/">openSUSE历史版本仓库</a></p>
+<p>☀️ debian<br>
+✨ 万万发行版之父<br>
+<a href="https://www.debian.org/distrib/">Debian 官方下载</a><br>
+<a href="https://www.debian.org/distrib/archive">Debian旧版本</a></p>
+<p>☀️ manjaro<br>
+✨ 基于Arch Linux的小白发行版</p>
 <ul>
-<li>桌面环境UKUI</li>
+<li>官方支持的桌面环境：xfce，gnome，KDE与architect安装版本<br>
+<a href="https://manjaro.org/download/">manjaro KDE/xfce/gnome官方下载</a><br>
+<a href="https://manjaro.org/download/#Community">manjaro 社区版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/xfce/">manjaro Xfce历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/gnome/">manjaro gnome 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/kde">manjaro KDE 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/openbox/">manjaro openbox 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/mate/">manjaro mate 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/lxqt/">manjaro lxqt 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/lxde/">manjaro lxde 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/i3/">manjaro i3 历史版本下载</a> <a href="https://osdn.net/projects/manjaro-archive/storage/cinnamon/">manjaro cinnamon历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/budgie/">manjaro budgie 历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/bspwm/">manjaro bspwm历史版本下载</a><br>
+<a href="https://osdn.net/projects/manjaro-archive/storage/awesome/">manjaro awesome历史版本下载</a></li>
 </ul>
-<h3 id="8ubuntu-mate">8.ubuntu mate</h3>
+<p>☀️ MX Linux<br>
+✨ 新晋的高热度Linux<br>
+<a href="https://mxlinux.org/download-links/">MX Linux 官方下载</a><br>
+<a href="https://sourceforge.net/projects/mx-linux/files/Old/">旧版本MX Linux下载</a></p>
+<p>☀️ Pop! OS<br>
+✨ 非常优秀，现代化的Linux发行版，基于Ubuntu，由system 76开发<br>
+<a href="https://pop.system76.com/">Pop OS 官方下载</a></p>
+<p>☀️ puppy Linux<br>
+<a href="http://puppylinux.com/index.html#download">Puppy Linux 官方下载</a></p>
+<p>☀️ KDE Neon<br>
+✨ KDE官方团队推出的Linux发行版，基于ubuntu</p>
 <ul>
-<li>桌面环境MATE</li>
+<li>搭载KDE Plasma桌面环境<br>
+<a href="https://neon.kde.org/download">KDE Neon官方下载</a></li>
 </ul>
-<h3 id="9mythbuntu">9.mythbuntu</h3>
+<p>☀️ solus<br>
+✨ 拥有自己的桌面环境Budgie，极致扁平化，总体使用舒畅<br>
+<a href="https://getsol.us/download/">solus官方下载</a></p>
+<p>☀️ antiX<br>
+✨ 基于Debian的Linux发行版<br>
+<a href="https://antixlinux.com/download/">antiX 官方下载</a></p>
+<p>☀️ parrot Linux<br>
+✨ 与kali同种类型<br>
+<a href="https://www.parrotlinux.org/download/">parrot Linux 官方下载</a><br>
+<a href="https://download.parrot.sh/parrot/iso/">parrot旧版仓库</a></p>
+<p>☀️ pure OS<br>
+<a href="https://pureos.net/download/">pure OS官方下载</a></p>
+<p>☀️ Bodhi Linux<br>
+✨ 基于Ubuntu</p>
 <ul>
-<li>桌面环境xfce myTV版buntu(终止于16.04)</li>
+<li>桌面环境Moksha<br>
+<a href="https://www.bodhilinux.com/download/">Bodhi Linux官方下载</a><br>
+<a href="https://sourceforge.net/projects/bodhilinux/files/">Bodhi Linux 旧版本下载</a></li>
 </ul>
-<h3 id="10ubuntu-gnome">10.ubuntu gnome</h3>
-<ul>
-<li>桌面环境gnome,在Ubuntu采用unity时作为衍生版(终止于16.04)</li>
-</ul>
-<h3 id="11ubuntu-server">11.ubuntu server</h3>
-<ul>
-<li>适用于做服务器系统的版本<br>
-💫<a href="http://www.cdimage.ubuntu.com/">ubuntu及衍生版历史版本下载</a><br>
-💫<a href="https://ubuntu.com/download/desktop/">ubuntu官版官方下载</a><br>
-💫<a href="https://xubuntu.org/download/">xubuntu官方下载</a><br>
-💫<a href="https://kubuntu.org/getkubuntu/">kubuntu官方下载</a><br>
-💫<a href="https://lubuntu.me/downloads/">lubuntu官方下载</a><br>
-💫<a href="https://ubuntustudio.org/download/">unbuntu studio官方下载</a><br>
-💫<a href="https://ubuntubudgie.org/downloads/">ubuntu budgie官方下载</a><br>
-💫<a href="https://www.ubuntukylin.com/downloads/show.php?id=451&amp;lang=en">ubuntu kylin官方下载</a><br>
-💫<a href="https://ubuntu-mate.org/download/">ubuntu mate官方下载</a><br>
-💫<a href="http://www.cdimage.ubuntu.com/mythbuntu/">mythbuntu历史版本下载</a><br>
-💫<a href="http://www.cdimage.ubuntu.com/ubuntu-gnome/">unbuntu gonme历史版本下载</a><br>
-💫<a href="https://ubuntu.com/download/server">ubuntu server官方下载</a>
-<h2 id="️jing-os">☀️jing OS</h2>
------------为非iPad的平板设备开发的触摸型操纵系统-----------<br>
-💫<a href="https://cn.jingos.com/">jing OS官方下载</a>
-<h2 id="️deepin">☀️deepin</h2>
------------本土化做的最好的Linux发行版 -----------
-<ul>
-<li>桌面环境DDE<br>
-💫<a href="https://www.deepin.org/zh/download/">deepin官方下载</a><br>
-💫<a href="http://cdimage.deepin.com/releases/">deepin官方镜像仓库</a><br>
-💫<a href="http://cdimage.deepin.com/releases-archive/">deepin旧版本仓库</a></li>
-</ul>
-<h2 id="️kail">☀️kail</h2>
------------安全测试专用 -----------<br>
-💫 <a href="https://www.kali.org/get-kali/">kail官方下载</a><br>
-💫 <a href="http://cdimage.kali.org/">kail官方镜像仓库</a></li>
-</ul>
+<p>☀️ PCLinuxOS<br>
+<a href="https://www.pclinuxos.com/?page_id=10">PCLinuxOS官方下载站</a></p>
+<p>☀️ EndeavourOS<br>
+<a href="https://endeavouros.com/latest-release/">EndeavourOS官方下载站</a></p>
+<!-- more -->
+<p>👻👻👻👻👻待更新</p>
 
             </div>
             
@@ -660,7 +630,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/" title="Linux常用发行版下载导航 一">https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/</a>
+      <a href="https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/" title="Linux常用发行版下载导航 ">https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -669,18 +639,12 @@
   </ul>
   <div class="tags">
     
-      <a href="https://rareliao.github.io/tag/DChCre0F7/"># Linux</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
     </div>
     <div class="nav-next">
-      
-        <a class="nav-pc-next" title="Hello Gridea" href="https://rareliao.github.io/post/hello-gridea/">Hello Gridea</a>
-        <a class="nav-mobile-next" title="Hello Gridea" href="https://rareliao.github.io/post/hello-gridea/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
@@ -1133,106 +1097,270 @@
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://rareliao.github.io/post/linux-chang-yong-fa-xing-ban-xia-zai-dao-hang/"" data-c="
-          &lt;p&gt;👻👻👻👻## ☀️ubuntu及衍生&lt;br&gt;
------------最富盛名的Linux发行版之一，兼容好------------&lt;/p&gt;
-&lt;h3 id=&#34;1ununtu&#34;&gt;1.ununtu&lt;/h3&gt;
+          &lt;p&gt;👻👻👻👻👻&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;☀️ ubuntu及衍生&lt;br&gt;
+✨ 最富盛名的Linux发行版之一，兼容性好&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ubuntu&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境Gone(16.10以后)/Unity(16.04以前)&lt;/li&gt;
+&lt;li&gt;桌面环境 Gone(16.10以后)/Unity(16.04以前)&lt;br&gt;
+&lt;a href=&#34;https://ubuntu.com/download/desktop/&#34;&gt;ubuntu官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://www.cdimage.ubuntu.com/&#34;&gt;ubuntu及衍生历史版本下载&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2xubuntu&#34;&gt;2.xubuntu&lt;/h3&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;xubuntu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 xfce&lt;br&gt;
+&lt;a href=&#34;https://xubuntu.org/download/&#34;&gt;xubuntu官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;kubuntu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 KDE&lt;br&gt;
+&lt;a href=&#34;https://kubuntu.org/getkubuntu/&#34;&gt;kubuntu官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;lubuntu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 LXQT(18.10以后)/LXDE(18.10)&lt;br&gt;
+&lt;a href=&#34;https://lubuntu.me/downloads/&#34;&gt;lubuntu官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;ubuntu studio&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;适合音乐/广播创作者&lt;br&gt;
+&lt;a href=&#34;https://ubuntustudio.org/download/&#34;&gt;ubuntu studio官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;ubuntu budgie&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 Budgie DE&lt;br&gt;
+&lt;a href=&#34;https://ubuntubudgie.org/downloads/&#34;&gt;ubuntu budgie官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;ubuntu kylin&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 UKUI&lt;br&gt;
+&lt;a href=&#34;https://www.ubuntukylin.com/downloads/show.php?id=451&amp;amp;lang=en&#34;&gt;ubuntu kylin官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;ubuntu mate&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境MATE&lt;br&gt;
+&lt;a href=&#34;https://ubuntu-mate.org/download/&#34;&gt;ubuntu mate官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;mythbuntu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 xfce myTV版buntu(终止于16.04)&lt;br&gt;
+&lt;a href=&#34;http://www.cdimage.ubuntu.com/mythbuntu/&#34;&gt;mythbuntu历史版本下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;ubuntu gnome&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 gnome,在Ubuntu采用unity时作为衍生版(终止于16.04)&lt;br&gt;
+&lt;a href=&#34;http://www.cdimage.ubuntu.com/ubuntu-gnome/&#34;&gt;ubuntu gnome历史版本下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;ubuntu server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;适用于做服务器系统的版本&lt;br&gt;
+&lt;a href=&#34;https://ubuntu.com/download/server&#34;&gt;ubuntu server官方下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;☀️ jing OS&lt;br&gt;
+✨ 为非ipad的平板设备开发的触控型操作系统&lt;br&gt;
+&lt;a href=&#34;https://cn.jingos.com/&#34;&gt;jing OS官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ deepin&lt;br&gt;
+✨ 本土化做的最好的Linux发行版&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境DDE&lt;br&gt;
+&lt;a href=&#34;https://www.deepin.org/zh/download/&#34;&gt;deepin官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://cdimage.deepin.com/releases/&#34;&gt;镜像仓库&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://cdimage.deepin.com/releases-archive/&#34;&gt;旧版本仓库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;☀️ kali&lt;br&gt;
+✨ 安全测试专用&lt;br&gt;
+&lt;a href=&#34;https://www.kali.org/get-kali/&#34;&gt;kali官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://cdimage.kali.org/&#34;&gt;镜像仓库&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ fedora&lt;br&gt;
+✨ Red Hat社区版，各种版本很全&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;fedora workstation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 gnome&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;fedora spins&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 KDE/xfce/MATE/LXDE/LXQT/cinnamon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;fedora comp neuro&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 gnome&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;fedora astronomy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 KDE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;fedora design suite&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;桌面环境 xfce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;fedora games&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;桌面环境xfce&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;3kubuntu&#34;&gt;3.kubuntu&lt;/h3&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;fedora python classroom&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境KDE&lt;/li&gt;
+&lt;li&gt;桌面环境 gnome&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;4lubuntu&#34;&gt;4.lubuntu&lt;/h3&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;fedora security&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境LXQT(18.10以后)/LXDE(18.10)&lt;/li&gt;
+&lt;li&gt;桌面环境 xfce&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;5-ubuntu-studio&#34;&gt;5. ubuntu  studio&lt;/h3&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;fedora scientific&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;适合音乐/广播创作者&lt;/li&gt;
+&lt;li&gt;桌面环境 KDE&lt;br&gt;
+&lt;a href=&#34;https://getfedora.org/en/workstation/download/&#34;&gt;fedora workstation官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://getfedora.org/en/server/download/&#34;&gt;fedora server官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://spins.fedoraproject.org/kde/download/index.html&#34;&gt;fedora KDE官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://spins.fedoraproject.org/xfce/download/index.html&#34;&gt;fedora xfce官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://spins.fedoraproject.org/lxqt/downloadindex.html&#34;&gt;fedora LXQT官方下载&lt;/a&gt; &lt;a href=&#34;https://spins.fedoraproject.org/mate-compizdownload/index.html&#34;&gt;fedora mate compiz官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://spins.fedoraproject.org/cinnamon/download/index.html&#34;&gt;fedora cinnamon官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://spins.fedoraproject.org/lxde/download/index.html&#34;&gt;fedora lxde官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/astronomy/download/index.html&#34;&gt;fedora实验室·astronomy版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/comp-neuro/download/index.html&#34;&gt;fedora实验室 comp neuro版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/design-suitedownload/index.html&#34;&gt;fedora实验室 design suite版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/games/download/index.html&#34;&gt;fedora 实验室 games版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/jam/download/index.html&#34;&gt;fedora 实验室 JAM 版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/python-classroom/download/index.html&#34;&gt;fedora实验室 python classroom版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/security/download/index.html&#34;&gt;fedora 实验室 security 版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/robotics/download/index.html&#34;&gt;fedora 实验室 robotics suite版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://labs.fedoraproject.org/scientific/download/index.html&#34;&gt;fedora 实验室 scientific版本&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://archive.fedoraproject.org/pub/fedora/linux/releases/&#34;&gt;fedora旧版本仓库&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;6ubuntu-budgie&#34;&gt;6.ubuntu budgie&lt;/h3&gt;
+&lt;p&gt;☀️ linux mint&lt;br&gt;
+✨ 比ubuntu用户体验做的细致，值得体验&lt;br&gt;
+&lt;a href=&#34;https://www.linuxmint.com/download.php&#34;&gt;linux mint官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.linuxmint.com/download_all.php&#34;&gt;Linux mint旧版本&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ LMDE （ Linux mint Debian Edition）&lt;br&gt;
+✨ Linux mint基于Debian的版本&lt;br&gt;
+&lt;a href=&#34;https://www.linuxmint.com/download_lmde.php&#34;&gt;LMDE官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ arch linux&lt;br&gt;
+✨ 安装富有挑战性&lt;br&gt;
+&lt;a href=&#34;https://archlinux.org/download/&#34;&gt;arch linux 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://archive.archlinux.org/iso/&#34;&gt;arch linux 历史版本&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ elementary OS&lt;br&gt;
+✨ 拟物化风格&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境Budgie DE&lt;/li&gt;
+&lt;li&gt;桌面环境pantheon&lt;br&gt;
+&lt;a href=&#34;https://elementary.io/&#34;&gt;elementary OS 官方下载&lt;/a&gt;(输入金额0即可下载)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;7ubuntu-kylin&#34;&gt;7.ubuntu kylin&lt;/h3&gt;
+&lt;p&gt;☀️ zorin OS&lt;br&gt;
+✨易用，轻量，简约&lt;br&gt;
+&lt;a href=&#34;https://zorinos.com/download/&#34;&gt;zorin OS 官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ cent OS&lt;br&gt;
+✨服务器专属，老牌Linux发行版&lt;br&gt;
+&lt;a href=&#34;https://www.centos.org/download/&#34;&gt;cent OS 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://wiki.centos.org/Download&#34;&gt;cent OS 旧版本下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ gentoo Linux&lt;br&gt;
+&lt;a href=&#34;https://www.gentoo.org/downloads/&#34;&gt;gentoo linux官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ openSUSE&lt;br&gt;
+✨ SUSE enterprise Linux公开版&lt;br&gt;
+&lt;a href=&#34;https://software.opensuse.org/distributions/leap&#34;&gt;openSUSE Leap 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://software.opensuse.org/distributionstumbleweed&#34;&gt;openSUSE tumbleweed 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://ftp5.gwdg.de/pub/opensuse/discontinued/distribution/&#34;&gt;openSUSE历史版本仓库&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ debian&lt;br&gt;
+✨ 万万发行版之父&lt;br&gt;
+&lt;a href=&#34;https://www.debian.org/distrib/&#34;&gt;Debian 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.debian.org/distrib/archive&#34;&gt;Debian旧版本&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ manjaro&lt;br&gt;
+✨ 基于Arch Linux的小白发行版&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境UKUI&lt;/li&gt;
+&lt;li&gt;官方支持的桌面环境：xfce，gnome，KDE与architect安装版本&lt;br&gt;
+&lt;a href=&#34;https://manjaro.org/download/&#34;&gt;manjaro KDE/xfce/gnome官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://manjaro.org/download/#Community&#34;&gt;manjaro 社区版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/xfce/&#34;&gt;manjaro Xfce历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/gnome/&#34;&gt;manjaro gnome 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/kde&#34;&gt;manjaro KDE 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/openbox/&#34;&gt;manjaro openbox 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/mate/&#34;&gt;manjaro mate 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/lxqt/&#34;&gt;manjaro lxqt 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/lxde/&#34;&gt;manjaro lxde 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/i3/&#34;&gt;manjaro i3 历史版本下载&lt;/a&gt; &lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/cinnamon/&#34;&gt;manjaro cinnamon历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/budgie/&#34;&gt;manjaro budgie 历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/bspwm/&#34;&gt;manjaro bspwm历史版本下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://osdn.net/projects/manjaro-archive/storage/awesome/&#34;&gt;manjaro awesome历史版本下载&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;8ubuntu-mate&#34;&gt;8.ubuntu mate&lt;/h3&gt;
+&lt;p&gt;☀️ MX Linux&lt;br&gt;
+✨ 新晋的高热度Linux&lt;br&gt;
+&lt;a href=&#34;https://mxlinux.org/download-links/&#34;&gt;MX Linux 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://sourceforge.net/projects/mx-linux/files/Old/&#34;&gt;旧版本MX Linux下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ Pop! OS&lt;br&gt;
+✨ 非常优秀，现代化的Linux发行版，基于Ubuntu，由system 76开发&lt;br&gt;
+&lt;a href=&#34;https://pop.system76.com/&#34;&gt;Pop OS 官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ puppy Linux&lt;br&gt;
+&lt;a href=&#34;http://puppylinux.com/index.html#download&#34;&gt;Puppy Linux 官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ KDE Neon&lt;br&gt;
+✨ KDE官方团队推出的Linux发行版，基于ubuntu&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境MATE&lt;/li&gt;
+&lt;li&gt;搭载KDE Plasma桌面环境&lt;br&gt;
+&lt;a href=&#34;https://neon.kde.org/download&#34;&gt;KDE Neon官方下载&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;9mythbuntu&#34;&gt;9.mythbuntu&lt;/h3&gt;
+&lt;p&gt;☀️ solus&lt;br&gt;
+✨ 拥有自己的桌面环境Budgie，极致扁平化，总体使用舒畅&lt;br&gt;
+&lt;a href=&#34;https://getsol.us/download/&#34;&gt;solus官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ antiX&lt;br&gt;
+✨ 基于Debian的Linux发行版&lt;br&gt;
+&lt;a href=&#34;https://antixlinux.com/download/&#34;&gt;antiX 官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ parrot Linux&lt;br&gt;
+✨ 与kali同种类型&lt;br&gt;
+&lt;a href=&#34;https://www.parrotlinux.org/download/&#34;&gt;parrot Linux 官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://download.parrot.sh/parrot/iso/&#34;&gt;parrot旧版仓库&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ pure OS&lt;br&gt;
+&lt;a href=&#34;https://pureos.net/download/&#34;&gt;pure OS官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ Bodhi Linux&lt;br&gt;
+✨ 基于Ubuntu&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;桌面环境xfce myTV版buntu(终止于16.04)&lt;/li&gt;
+&lt;li&gt;桌面环境Moksha&lt;br&gt;
+&lt;a href=&#34;https://www.bodhilinux.com/download/&#34;&gt;Bodhi Linux官方下载&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://sourceforge.net/projects/bodhilinux/files/&#34;&gt;Bodhi Linux 旧版本下载&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;10ubuntu-gnome&#34;&gt;10.ubuntu gnome&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;桌面环境gnome,在Ubuntu采用unity时作为衍生版(终止于16.04)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;11ubuntu-server&#34;&gt;11.ubuntu server&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;适用于做服务器系统的版本&lt;br&gt;
-💫&lt;a href=&#34;http://www.cdimage.ubuntu.com/&#34;&gt;ubuntu及衍生版历史版本下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://ubuntu.com/download/desktop/&#34;&gt;ubuntu官版官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://xubuntu.org/download/&#34;&gt;xubuntu官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://kubuntu.org/getkubuntu/&#34;&gt;kubuntu官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://lubuntu.me/downloads/&#34;&gt;lubuntu官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://ubuntustudio.org/download/&#34;&gt;unbuntu studio官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://ubuntubudgie.org/downloads/&#34;&gt;ubuntu budgie官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://www.ubuntukylin.com/downloads/show.php?id=451&amp;amp;lang=en&#34;&gt;ubuntu kylin官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://ubuntu-mate.org/download/&#34;&gt;ubuntu mate官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;http://www.cdimage.ubuntu.com/mythbuntu/&#34;&gt;mythbuntu历史版本下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;http://www.cdimage.ubuntu.com/ubuntu-gnome/&#34;&gt;unbuntu gonme历史版本下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;https://ubuntu.com/download/server&#34;&gt;ubuntu server官方下载&lt;/a&gt;
-&lt;h2 id=&#34;️jing-os&#34;&gt;☀️jing OS&lt;/h2&gt;
------------为非iPad的平板设备开发的触摸型操纵系统-----------&lt;br&gt;
-💫&lt;a href=&#34;https://cn.jingos.com/&#34;&gt;jing OS官方下载&lt;/a&gt;
-&lt;h2 id=&#34;️deepin&#34;&gt;☀️deepin&lt;/h2&gt;
------------本土化做的最好的Linux发行版 -----------
-&lt;ul&gt;
-&lt;li&gt;桌面环境DDE&lt;br&gt;
-💫&lt;a href=&#34;https://www.deepin.org/zh/download/&#34;&gt;deepin官方下载&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;http://cdimage.deepin.com/releases/&#34;&gt;deepin官方镜像仓库&lt;/a&gt;&lt;br&gt;
-💫&lt;a href=&#34;http://cdimage.deepin.com/releases-archive/&#34;&gt;deepin旧版本仓库&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;️kail&#34;&gt;☀️kail&lt;/h2&gt;
------------安全测试专用 -----------&lt;br&gt;
-💫 &lt;a href=&#34;https://www.kali.org/get-kali/&#34;&gt;kail官方下载&lt;/a&gt;&lt;br&gt;
-💫 &lt;a href=&#34;http://cdimage.kali.org/&#34;&gt;kail官方镜像仓库&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-">Linux常用发行版下载导航 一</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://rareliao.github.io/post/hello-gridea/"" data-c="
-          &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
+&lt;p&gt;☀️ PCLinuxOS&lt;br&gt;
+&lt;a href=&#34;https://www.pclinuxos.com/?page_id=10&#34;&gt;PCLinuxOS官方下载站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;☀️ EndeavourOS&lt;br&gt;
+&lt;a href=&#34;https://endeavouros.com/latest-release/&#34;&gt;EndeavourOS官方下载站&lt;/a&gt;&lt;/p&gt;
 &lt;!-- more --&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea&#34;&gt;Github&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://fehey.com/&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特性&#34;&gt;特性👇&lt;/h2&gt;
-&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;
-&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;
-&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;
-&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;
-&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;
-&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;
-&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/SukkaW/DisqusJS&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;
-&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;
-&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;
-&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;
-&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;
-&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;
-&lt;p&gt;😘 Enjoy~&lt;/p&gt;
-">Hello Gridea</a>
+&lt;p&gt;👻👻👻👻👻待更新&lt;/p&gt;
+">Linux常用发行版下载导航 </a>
       </div>
       
     </div>
